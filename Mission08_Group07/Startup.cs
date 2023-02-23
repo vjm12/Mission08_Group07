@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Mission08_Group07;
 
 namespace Mission08_Group07
 {
@@ -24,6 +25,11 @@ namespace Mission08_Group07
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<MovieContext>(options =>
+            {
+                options.UseSqlite(Configuration["ConnectionStrings:Mission8Connection"]);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

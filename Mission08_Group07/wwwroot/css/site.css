@@ -69,3 +69,42 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.row {
+    display: flex;
+    width: auto;
+    text-align: center;
+    font-size: 32px;
+}
+
+    .row div {
+        width: 50%;
+    }
+
+.noMargin {
+    margin: 0px;
+}
+
+.quadpadding {
+    padding: 190px 160px 10px;
+}
+
+.one {
+    background-color: transparent;
+    border-bottom: purple solid 3px;
+    border-right: purple solid 3px;
+}
+
+.two {
+    background-color: transparent;
+    border-bottom: purple solid 3px;
+}
+
+.three {
+    background-color: transparent;
+    border-right: purple solid 3px;
+}
+
+.four {
+    background-color: transparent;
+}
