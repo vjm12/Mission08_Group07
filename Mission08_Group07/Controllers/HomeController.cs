@@ -23,7 +23,7 @@ namespace Mission08_Group07.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Quadrant()
         {
             return View();
         }
