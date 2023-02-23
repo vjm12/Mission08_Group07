@@ -27,6 +27,10 @@ namespace Mission08_Group07.Controllers
         {
             return View();
         }
+        public IActionResult AddEditTask()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
