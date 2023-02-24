@@ -9,28 +9,28 @@
 <div>
     <form method="post">
         <label asp-for="Task">Task Name</label>
-        <input asp-for="Task" />
+        <input asp-for="Task" /><br /><br />
         <label asp-for="DueDate">Due Date</label>
-        <input asp-for="DueDate" />
+        <input asp-for="DueDate" /><br /><br />
         <label asp-for="QuadrantNumber">Quadrant</label>
         <select asp-for="QuadrantNumber">
             <option value="1">Quadrant 1</option>
             <option value="2">Quadrant 2</option>
             <option value="3">Quadrant 3</option>
             <option value="4">Quadrant 4</option>
-        </select>
+        </select><br /><br />
         <label asp-for="CategoryID">Category</label>
         <select>
             @foreach (Category c in ViewBag.Categories)
             {
                 <option value="@c.CategoryID">@c.CategoryName</option>
             }
-        </select>
+        </select><br /><br />
         <label asp-for="Completed">Completed?</label>
         <select asp-for="Completed">
             <option value="True">Yes</option>
             <option value="False">No</option>
-        </select>
+        </select><br /><br />
         <button type="submit">Submit</button>
         <div asp-validation-summary="All"></div>
     </form>
