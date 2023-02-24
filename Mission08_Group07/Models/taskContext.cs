@@ -17,22 +17,57 @@ namespace Mission08_Group07.Models
             public DbSet<NewTask> Responses { get; set; }
             public DbSet<Category> Categories { get; set; }
 
-            // Seed Data
+        // Seed Data
 
-            protected override void OnModelCreating(ModelBuilder mb)
+        protected override void OnModelCreating(ModelBuilder mb)
+        {
+            mb.Entity<Category>().HasData(
+                    new Category { CategoryID = 1, CategoryName = "Home" },
+                    new Category { CategoryID = 2, CategoryName = "School" },
+                    new Category { CategoryID = 3, CategoryName = "Work" },
+                    new Category { CategoryID = 4, CategoryName = "Church" }
+                );
+
+            mb.Entity<NewTask>().HasData(
+            new NewTask
             {
-                mb.Entity<Category>().HasData(
-                        new Category { CategoryID = 1, CategoryName = "Home" },
-                        new Category { CategoryID = 2, CategoryName = "School" },
-                        new Category { CategoryID = 3, CategoryName = "Work" },
-                        new Category { CategoryID = 4, CategoryName = "Church" }
-                    );
-
-            
-
-            }
+                TaskID = 1,
+                Task = "Clean dishes",
+                DueDate = DateTime.Now.AddDays(1),
+                QuadrantNumber = 1,
+                Completed = false,
+                CategoryID = 1
+            },
+             new NewTask
+            {
+                TaskID = 2,
+                Task = "Go for a run",
+                DueDate = DateTime.Now.AddDays(3),
+                QuadrantNumber = 2,
+                Completed = false,
+                CategoryID = 2
+            },
+            new NewTask
+            {
+                TaskID = 3,
+                Task = "Read a book",
+                DueDate = DateTime.Now.AddDays(2),
+                QuadrantNumber = 3,
+                Completed = false,
+                CategoryID = 3
+            },
+            new NewTask
+            {
+                TaskID = 4,
+                Task = "Call a friend",
+                DueDate = DateTime.Now.AddDays(4),
+                QuadrantNumber = 4,
+                Completed = false,
+                CategoryID = 4
+            });
+        }
     }
-    }
+}
 
 
 

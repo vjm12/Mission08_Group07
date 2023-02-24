@@ -9,7 +9,7 @@ using Mission08_Group07.Models;
 namespace Mission08_Group07.Migrations
 {
     [DbContext(typeof(TaskContext))]
-    [Migration("20230224014423_Initial")]
+    [Migration("20230224221901_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -81,6 +81,44 @@ namespace Mission08_Group07.Migrations
                     b.HasIndex("CategoryID");
 
                     b.ToTable("Responses");
+
+                    b.HasData(
+                        new
+                        {
+                            TaskID = 1,
+                            CategoryID = 1,
+                            Completed = false,
+                            DueDate = new DateTime(2023, 2, 25, 15, 19, 0, 875, DateTimeKind.Local).AddTicks(4594),
+                            QuadrantNumber = 1,
+                            Task = "Clean dishes"
+                        },
+                        new
+                        {
+                            TaskID = 2,
+                            CategoryID = 2,
+                            Completed = false,
+                            DueDate = new DateTime(2023, 2, 27, 15, 19, 0, 877, DateTimeKind.Local).AddTicks(9730),
+                            QuadrantNumber = 2,
+                            Task = "Go for a run"
+                        },
+                        new
+                        {
+                            TaskID = 3,
+                            CategoryID = 3,
+                            Completed = false,
+                            DueDate = new DateTime(2023, 2, 26, 15, 19, 0, 878, DateTimeKind.Local).AddTicks(465),
+                            QuadrantNumber = 3,
+                            Task = "Read a book"
+                        },
+                        new
+                        {
+                            TaskID = 4,
+                            CategoryID = 4,
+                            Completed = false,
+                            DueDate = new DateTime(2023, 2, 28, 15, 19, 0, 878, DateTimeKind.Local).AddTicks(900),
+                            QuadrantNumber = 4,
+                            Task = "Call a friend"
+                        });
                 });
 
             modelBuilder.Entity("Mission08_Group07.Models.NewTask", b =>
