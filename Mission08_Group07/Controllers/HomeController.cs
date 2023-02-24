@@ -14,7 +14,6 @@ namespace Mission08_Group07.Controllers
     {
         private TaskContext daContext { get;  set; }
         
-
         public HomeController(TaskContext tc)
         {
             daContext = tc;
@@ -27,7 +26,8 @@ namespace Mission08_Group07.Controllers
 
         public IActionResult Quadrant()
         {
-            return View();
+            var Task = daContext.Responses.Where(x => x.Completed != true).Include(x => x.Category).OrderBy(x => x.DueDate).ToList();
+            return View(Task);
         }
 
         [HttpGet]

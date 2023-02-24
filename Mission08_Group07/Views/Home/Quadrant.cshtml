@@ -1,161 +1,71 @@
 ﻿@{
     ViewData["Title"] = "Quadrants";
 }
+@model List<NewTask>
 <h1>@ViewData["Title"]</h1>
 
-<section class="help ">
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h1>Q1</h1>
+            <h2>Important/Urgent</h2>
+            <ul>
+                @foreach (var x in Model)
+                {
+                    <li>@x.Task</li>
+                    <li>@x.DueDate</li>
 
-    <div class="help-content">
+                    <li><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a></li>
+                    <li><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a></li>
 
-        <h2>Stephen Covey's Time Management Matrix</h2>
-        <div class="row noMargin">
-            <div class="one quadpadding">
-                <h3>Quadrant 1</h3>
-                <table class="table table-bordered table-striped">
-                    <thead class="font-weight-bold">
-                        <tr>
-                            <td>Category</td>
-                            <td>Title</td>
-                            <td>Year</td>
-                            <td>Director</td>
-                            <td>Rating</td>
-                            <td>Edited</td>
-                            <td>Lent</td>
-                            <td>Notes</td>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        @*@foreach (var x in Model)*@
-                        {
-                            <tr>
-                                @*<td>@x.Category.CategoryName</td>
-                                <td>@x.Title</td>
-                                <td>@x.Year</td>
-                                <td>@x.Director</td>
-                                <td>@x.Rating</td>
-                                <td>@x.Edited</td>
-                                <td>@x.Lent</td>
-                                <td>@x.Notes</td>*@
-
-                                @*<td><a asp-controller="Home" asp-action="Edit" asp-route-applicationid="@x.CategoryId">Edit</a></td>
-                                <td><a asp-controller="Home" asp-action="Delete" asp-route-applicationid="@x.CategoryId">Delete</a></td>*@
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-            <div class="two quadpadding">
-                <h3>Quadrant 2</h3>
-                <table class="table table-bordered table-striped">
-                    <thead class="font-weight-bold">
-                        <tr>
-                            <td>Category</td>
-                            <td>Title</td>
-                            <td>Year</td>
-                            <td>Director</td>
-                            <td>Rating</td>
-                            <td>Edited</td>
-                            <td>Lent</td>
-                            <td>Notes</td>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        @*@foreach (var x in Model)*@
-                        {
-                            <tr>
-                                @*<td>@x.Category.CategoryName</td>
-                                <td>@x.Title</td>
-                                <td>@x.Year</td>
-                                <td>@x.Director</td>
-                                <td>@x.Rating</td>
-                                <td>@x.Edited</td>
-                                <td>@x.Lent</td>
-                                <td>@x.Notes</td>*@
-
-                                @*<td><a asp-controller="Home" asp-action="Edit" asp-route-applicationid="@x.CategoryId">Edit</a></td>
-                                <td><a asp-controller="Home" asp-action="Delete" asp-route-applicationid="@x.CategoryId">Delete</a></td>*@
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
+                }
+            </ul>
         </div>
-        <div class="row noMargin">
-            <div class="three  quadpadding">
-                <h3>Quadrant 3</h3>
-                <table class="table table-bordered table-striped">
-                    <thead class="font-weight-bold">
-                        <tr>
-                            <td>Category</td>
-                            <td>Title</td>
-                            <td>Year</td>
-                            <td>Director</td>
-                            <td>Rating</td>
-                            <td>Edited</td>
-                            <td>Lent</td>
-                            <td>Notes</td>
-                        </tr>
-                    </thead>
+        <div class="col-6">
+            <h1>Q2</h1>
+            <h2>Important/Not Urgent</h2>
+            <ul>
+                @foreach (var x in Model)
+                {
+                    <li>@x.Task</li>
+                    <li>@x.DueDate</li>
 
-                    <tbody>
-                        @*@foreach (var x in Model)*@
-                        {
-                            <tr>
-                                @*<td>@x.Category.CategoryName</td>
-                                <td>@x.Title</td>
-                                <td>@x.Year</td>
-                                <td>@x.Director</td>
-                                <td>@x.Rating</td>
-                                <td>@x.Edited</td>
-                                <td>@x.Lent</td>
-                                <td>@x.Notes</td>*@
+                    <li><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a></li>
+                    <li><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a></li>
 
-                                @*<td><a asp-controller="Home" asp-action="Edit" asp-route-applicationid="@x.CategoryId">Edit</a></td>
-                                <td><a asp-controller="Home" asp-action="Delete" asp-route-applicationid="@x.CategoryId">Delete</a></td>*@
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-            <div class="four  quadpadding">
-                <h3>Quadrant 4</h3>
-                <table class="table table-bordered table-striped">
-                    <thead class="font-weight-bold">
-                        <tr>
-                            <td>Category</td>
-                            <td>Title</td>
-                            <td>Year</td>
-                            <td>Director</td>
-                            <td>Rating</td>
-                            <td>Edited</td>
-                            <td>Lent</td>
-                            <td>Notes</td>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        @*@foreach (var x in Model)*@
-                        {
-                            <tr>
-                                @*<td>@x.Category.CategoryName</td>
-                                <td>@x.Title</td>
-                                <td>@x.Year</td>
-                                <td>@x.Director</td>
-                                <td>@x.Rating</td>
-                                <td>@x.Edited</td>
-                                <td>@x.Lent</td>
-                                <td>@x.Notes</td>*@
-
-                                @*<td><a asp-controller="Home" asp-action="Edit" asp-route-applicationid="@x.CategoryId">Edit</a></td>
-                                <td><a asp-controller="Home" asp-action="Delete" asp-route-applicationid="@x.CategoryId">Delete</a></td>*@
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
+                }
+            </ul>
         </div>
     </div>
 
-</section>
+    <div class="row">
+        <div class="col-6">
+            <h1>Q3</h1>
+            <h2>Not Important/Urgent</h2>
+            <ul>
+                @foreach (var x in Model)
+                {
+                    <li>@x.Task</li>
+                    <li>@x.DueDate</li>
+
+                    <li><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a></li>
+                    <li><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a></li>
+                }
+            </ul>
+        </div>
+        <div class="col-6">
+            <h1>Q4</h1>
+            <h2>Not Important/Not Urgent</h2>
+            <ul>
+                @foreach (var x in Model)
+                {
+                    <li>@x.Task</li>
+                    <li>@x.DueDate</li>
+
+                    <li><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a></li>
+                    <li><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

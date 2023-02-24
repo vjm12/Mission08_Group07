@@ -63,6 +63,26 @@ namespace Mission08_Group07.Migrations
                 columns: new[] { "CategoryID", "CategoryName" },
                 values: new object[] { 4, "Church" });
 
+            migrationBuilder.InsertData(
+                table: "Responses",
+                columns: new[] { "TaskID", "CategoryID", "Completed", "DueDate", "QuadrantNumber", "Task" },
+                values: new object[] { 1, 1, false, new DateTime(2023, 2, 25, 15, 19, 0, 875, DateTimeKind.Local).AddTicks(4594), 1, "Clean dishes" });
+
+            migrationBuilder.InsertData(
+                table: "Responses",
+                columns: new[] { "TaskID", "CategoryID", "Completed", "DueDate", "QuadrantNumber", "Task" },
+                values: new object[] { 2, 2, false, new DateTime(2023, 2, 27, 15, 19, 0, 877, DateTimeKind.Local).AddTicks(9730), 2, "Go for a run" });
+
+            migrationBuilder.InsertData(
+                table: "Responses",
+                columns: new[] { "TaskID", "CategoryID", "Completed", "DueDate", "QuadrantNumber", "Task" },
+                values: new object[] { 3, 3, false, new DateTime(2023, 2, 26, 15, 19, 0, 878, DateTimeKind.Local).AddTicks(465), 3, "Read a book" });
+
+            migrationBuilder.InsertData(
+                table: "Responses",
+                columns: new[] { "TaskID", "CategoryID", "Completed", "DueDate", "QuadrantNumber", "Task" },
+                values: new object[] { 4, 4, false, new DateTime(2023, 2, 28, 15, 19, 0, 878, DateTimeKind.Local).AddTicks(900), 4, "Call a friend" });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Responses_CategoryID",
                 table: "Responses",
