@@ -12,10 +12,10 @@ namespace Mission08_Group07.Controllers
 {
     public class HomeController : Controller
     {
-        private taskContext daContext { get;  set; }
+        private TaskContext daContext { get;  set; }
         
 
-        public HomeController(taskContext tc)
+        public HomeController(TaskContext tc)
         {
             daContext = tc;
         }
@@ -34,6 +34,7 @@ namespace Mission08_Group07.Controllers
         public IActionResult AddEditTask()
         {
             ViewBag.Categories = daContext.Categories.ToList();
+
             return View();
         }
 
@@ -59,7 +60,7 @@ namespace Mission08_Group07.Controllers
             {
                 ViewBag.Categories = daContext.Categories.ToList();
 
-                var taskView = daContext.Responses.Single(x => x.taskID == taskID);
+                var taskView = daContext.Responses.Single(x => x.TaskID == taskID);
 
                 return View("AddEditTask", taskView);
             }
@@ -69,14 +70,14 @@ namespace Mission08_Group07.Controllers
             {
                 daContext.Update(blah);
                 daContext.SaveChanges();
-                // redirects to ListMovies Action above
+                // redirects 
                 return RedirectToAction("Quadrant");
             }
 
             [HttpGet]
             public IActionResult Delete(int taskID)
             {
-                var task = daContext.Responses.Single(x => x.taskID == taskID);
+                var task = daContext.Responses.Single(x => x.TaskID == taskID);
 
                 return View(task);
             }
@@ -84,12 +85,10 @@ namespace Mission08_Group07.Controllers
             [HttpPost]
             public IActionResult Delete(NewTask nt)
             {
-                daContext.responses.Remove(nt);
+                daContext.Responses.Remove(nt);
                 daContext.SaveChanges();
 
                 return RedirectToAction("Quadrant");
-
-                return View();
             }
 
         }

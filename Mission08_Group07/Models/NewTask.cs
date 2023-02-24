@@ -14,7 +14,11 @@ namespace Mission08_Group07.Models
 
         [Required]
         public string Task { get;  set; }
-        public DateTime Due_Date { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
+        public DateTime? DueDate { get; set; }
+
         [Required]
         public int QuadrantNumber { get ;  set; }
         public bool Completed { get;  set; }

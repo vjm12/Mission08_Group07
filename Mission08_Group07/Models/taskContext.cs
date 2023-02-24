@@ -6,10 +6,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Mission08_Group07.Models
 {
-    public class taskContext : DbContext
+    public class TaskContext : DbContext
     {
             //Constructor
-            public taskContext(DbContextOptions<taskContext> options) : base(options)
+            public TaskContext(DbContextOptions<TaskContext> options) : base(options)
             {
                 // leave blank for now
             }
@@ -26,9 +26,12 @@ namespace Mission08_Group07.Models
                         new Category { CategoryID = 2, CategoryName = "School" },
                         new Category { CategoryID = 3, CategoryName = "Work" },
                         new Category { CategoryID = 4, CategoryName = "Church" }
-                    );               
+                    );
+
+            
+
             }
-        }
+    }
     }
 
 

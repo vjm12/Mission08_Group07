@@ -2,14 +2,14 @@
     ViewData["Title"] = "Delete Application";
 }
 
-@model ApplicationResponse
+@model Mission08_Group07.Models.NewTask
 
 <h2>Confirm Deletion</h2>
-<h3>Are you sure you want to delete the record for @Model.Title?</h3>
+<h3>Are you sure you want to delete the record for @Model.Task?</h3>
 
 <form method="post" asp-controller="Home" asp-action="Delete">
     <button type="submit">Delete</button>
     <a asp-controller="Home" asp-action="WaitList" class="btn btn-primary">Cancel</a>
 
-    <input type="hidden" asp-for="ApplicationId" />
+    <input type="hidden" asp-for="TaskID" />
 </form>

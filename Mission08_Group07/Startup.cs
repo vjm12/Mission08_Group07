@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Mission08_Group07;
+using Microsoft.EntityFrameworkCore;
+using Mission08_Group07.Models;
 
 namespace Mission08_Group07
 {
@@ -26,9 +28,9 @@ namespace Mission08_Group07
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<MovieContext>(options =>
+            services.AddDbContext<TaskContext>(options =>
             {
-                options.UseSqlite(Configuration["ConnectionStrings:Mission8Connection"]);
+                options.UseSqlite(Configuration["ConnectionStrings:MissionConnection"]);
             });
         }
 
