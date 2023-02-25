@@ -6,6 +6,8 @@
 
 <h1>@ViewData["Title"]</h1>
 
+@*Allows user to add and edit tasks*@
+
 <div>
     <form method="post">
         <label asp-for="Task">Task Name</label>
@@ -19,6 +21,7 @@
             <option value="3">Quadrant 3</option>
             <option value="4">Quadrant 4</option>
         </select><br /><br />
+        <!--Use existing model to populate drop-down menu-->
         <label asp-for="CategoryID">Category</label>
         <select asp-for="CategoryID">
             <option value="">Select a Category</option>
@@ -33,6 +36,7 @@
             <option value="false">No</option>
         </select><br /><br />
         <button type="submit">Submit</button>
+        <!--Enable validation for data entered-->
         <div asp-validation-summary="All"></div>
     </form>
     </div>
