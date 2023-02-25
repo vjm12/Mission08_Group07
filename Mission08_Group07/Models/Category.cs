@@ -11,6 +11,7 @@ namespace Mission08_Group07.Models
         [Key]
         [Required]
         public int CategoryID { get; set; }
+        [Required]
         public string CategoryName { get; set; }
     }
 }

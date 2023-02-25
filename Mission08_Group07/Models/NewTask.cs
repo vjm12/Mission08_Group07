@@ -15,8 +15,7 @@ namespace Mission08_Group07.Models
         [Required]
         public string Task { get;  set; }
 
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yy}")]
         public DateTime? DueDate { get; set; }
 
         [Required]

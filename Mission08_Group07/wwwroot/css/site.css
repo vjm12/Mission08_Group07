@@ -91,18 +91,18 @@ body {
 
 .one {
     background-color: transparent;
-    border-bottom: purple solid 3px;
-    border-right: purple solid 3px;
+    border-bottom: black solid 3px;
+    border-right: black solid 3px;
 }
 
 .two {
     background-color: transparent;
-    border-bottom: purple solid 3px;
+    border-bottom: black solid 3px;
 }
 
 .three {
     background-color: transparent;
-    border-right: purple solid 3px;
+    border-right: black solid 3px;
 }
 
 .four {

@@ -5,67 +5,103 @@
 <h1>@ViewData["Title"]</h1>
 
 <div class="container">
-    <div class="row">
-        <div class="col-6">
+    <div class="row noMargin">
+        <div class="col-6 one quadpadding">
             <h1>Q1</h1>
             <h2>Important/Urgent</h2>
             <ul>
                 @foreach (var x in Model)
                 {
-                    <li>@x.Task</li>
-                    <li>@x.DueDate</li>
-
-                    <li><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a></li>
-                    <li><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a></li>
-
+                    if (@x.QuadrantNumber == 1)
+                    {
+                        <li> @x.Task</li> 
+                        <li style="list-style-type:none">@x.DueDate</li>
+                        <li style="list-style-type:none">@x.Category.CategoryName</li>  
+                        <li style="list-style-type:none"><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a></li>
+                        <li style="list-style-type:none"><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a></li>
+                        
+                       
+                    }
+                    else
+                    {
+                        continue;
+                    }
                 }
             </ul>
         </div>
-        <div class="col-6">
+        <div class="col-6 two quadpadding" >
             <h1>Q2</h1>
             <h2>Important/Not Urgent</h2>
             <ul>
                 @foreach (var x in Model)
                 {
-                    <li>@x.Task</li>
-                    <li>@x.DueDate</li>
+                    if (@x.QuadrantNumber == 2)
+                    {
+                        <li> @x.Task</li>
 
-                    <li><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a></li>
-                    <li><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a></li>
+                        <li style="list-style-type:none">@x.DueDate</li>
+                        <li style="list-style-type:none">@x.Category.CategoryName</li>
 
+                        <li style="list-style-type:none"><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a></li>
+                        <li style="list-style-type:none"><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a></li>
+
+                       
+                    }
+                    else
+                    {
+                        continue;
+                    }
                 }
             </ul>
         </div>
     </div>
-
+    
     <div class="row">
-        <div class="col-6">
+        <div class="col-6 three quadpadding">
             <h1>Q3</h1>
             <h2>Not Important/Urgent</h2>
             <ul>
                 @foreach (var x in Model)
                 {
-                    <li>@x.Task</li>
-                    <li>@x.DueDate</li>
+                    if (@x.QuadrantNumber == 3)
+                    {
+                        <li> @x.Task</li>
 
-                    <li><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a></li>
-                    <li><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a></li>
+                        <li style="list-style-type:none">@x.DueDate</li>
+                        <li style="list-style-type:none">@x.Category.CategoryName</li>
+
+                        <li style="list-style-type:none"><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a></li>
+                        <li style="list-style-type:none"><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a></li>
+                }
+                else
+                    {
+                        continue;
+                    }
                 }
             </ul>
         </div>
-        <div class="col-6">
+        <div class="col-6 four quadpadding">
             <h1>Q4</h1>
             <h2>Not Important/Not Urgent</h2>
             <ul>
                 @foreach (var x in Model)
                 {
-                    <li>@x.Task</li>
-                    <li>@x.DueDate</li>
+                    if (@x.QuadrantNumber == 4)
+                    {
+                        <li>@x.Task</li>
 
-                    <li><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a></li>
-                    <li><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a></li>
+                        <li style="list-style-type:none">@x.DueDate</li>
+                        <li style="list-style-type:none">@x.Category.CategoryName</li>
+
+                        <li style="list-style-type:none"><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a></li>
+                        <li style="list-style-type:none"><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a></li>
+                    }
+                    else
+                    {
+                        continue;
+                    }
                 }
-            </ul>
+            </ul>           
         </div>
     </div>
 </div>
